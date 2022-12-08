@@ -18,7 +18,7 @@ class GithubRepositoryImpl(val httpClient: HttpClient): GithubRepository {
 
     override suspend fun getNewestRelease(repository: String): GithubRelease {
         return httpClient.get {
-            url("${baseUrl}repos/${repository}/releases/latest")
+            url("${baseUrl}repos/${repository}/releases/52578746")
             contentType(ContentType.Application.Json)
         }
     }
