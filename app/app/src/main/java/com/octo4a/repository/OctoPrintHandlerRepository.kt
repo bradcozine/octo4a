@@ -141,7 +141,7 @@ class OctoPrintHandlerRepositoryImpl(
                 }
                 _serverState.emit(ServerStatus.InstallingDependencies)
                 bootstrapRepository.apply {
-                    runCommand("cd Octo* && pip3 install .").waitAndPrintOutput(logger)
+                    runCommand("pip3 install --upgrade setuptools wheel tornado --no-cache-dir").waitAndPrintOutput(logger)
                 }
                 _serverState.emit(ServerStatus.BootingUp)
                 insertInitialConfig()
